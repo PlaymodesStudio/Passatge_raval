@@ -1,0 +1,3 @@
+ofxArtNode
+ofxGui
+ofxNetwork
