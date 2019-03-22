@@ -12,7 +12,7 @@ LidarReader::LidarReader(){
     isUser = false;
     lastEventTime = 0;
     toleranceTime = 2;
-    noUserThreshold = 200;
+    noUserThreshold = 320;
 }
 
 void LidarReader::setup(uint8_t _user, uint8_t address){
@@ -46,7 +46,7 @@ void LidarReader::threadedFunction(){
                 lastEventTime = ofGetElapsedTimef();
             }
         }else{
-            if(!isSomething){
+            if(isSomething){
                 isSomething = false;
                 lastEventTime = ofGetElapsedTimef();
             }
