@@ -1,9 +1,8 @@
 #include "ofMain.h"
 #ifdef TARGET_RASPBERRY_PI
 #include "ofAppNoWindow.h"
-#else
-#include "ofApp.h"
 #endif
+#include "ofApp.h"
 
 
 //========================================================================
