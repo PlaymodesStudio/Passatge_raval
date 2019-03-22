@@ -2,8 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    lidarReader.setup(1, 0x61);
-    lidarReader2.setup(2, 0x62);
+    lidarReader.setup(0, 0x61);
+    lidarReader2.setup(1, 0x62);
     
     listeners.push(lidarReader.userEnteredEvent.newListener(&stateController, &StateController::userHasEntered));
     listeners.push(lidarReader.userLeavedEvent.newListener(&stateController, &StateController::userHasLeaved));
