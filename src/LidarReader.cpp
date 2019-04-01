@@ -33,10 +33,9 @@ void LidarReader::setup(uint8_t _user, uint8_t address){
 
 void LidarReader::threadedFunction(){
     while(isThreadRunning()){
-        usleep(20000);
 #ifdef TARGET_RASPBERRY_PI
         bus->writeByte(0x00, 0x04);
-        while(bus->tryReadByte(0x01) >> 7 != 0);
+        while(bus->tryReadByte(0x01) & (1 << 0));
         uint16_t highByte = bus->readByte(0x0f);
         uint16_t lowByte = bus->readByte(0x10);
         uint32_t readVal = lowByte + (highByte << 8);
