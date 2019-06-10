@@ -15,13 +15,14 @@ StateController::StateController(){
 void StateController::userHasEntered(int &userId){
     ofLog() << "User " + ofToString(userId) + " enters";
     if(users[!userId] == STATE_STANDBY){
-        users[userId] == STATE_PLAYING;
+        users[userId] = STATE_PLAYING;
     }else{
-        users[userId] == STATE_SYNCING;
+        users[userId] = STATE_SYNCING;
     }
 }
 
 void StateController::userHasLeaved(int &userId){
     ofLog() << "User " + ofToString(userId) + " leaves";
+    users[userId] = STATE_STANDBY;
 }
 
